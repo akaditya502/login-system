@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+
+{% for message in messages %}
+<div class="alrert alert-{{message.tags}} alert-dismissble fade show" role="alert"></div>
+<strong>message:</strong>{{message}}
+<button type="button" class="close" data-dismiss="alert" aria-label="close">
+<span aria-hidden="true">&times;</span>
+</button>
+{% endfor %}
+
+
+<h3>welcome to student dashboard</h3>
+
+{% if user.is_authenticated %}
+<h3>Hello{{fname}}</h3>
+<h4>you are successfullly logged in</h4>
+<button type="submit"><a href="/signout">signout</a></button>
+{% else %}
+<button type="submit"><a href="/signup">sign up</a></button>
+<button type="submit"><a href="/signin">signin</a></button>
+{% endif %}
+
+
+{% endblock body %}

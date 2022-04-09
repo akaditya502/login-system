@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+signin page
+<h3>signin</h3>
+<form action="/signin" method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" id="username" name="username" placeholder="create user name(only letter and number" required>
+    <br>
+    
+    <label for="">password</label>
+    <input type="password" id="pass1" name="pass1" placeholder=" Enter password" required>
+    <br>
+    <button type="submit">signin</button>
+
+</form>
+
+{% endblock body %}
